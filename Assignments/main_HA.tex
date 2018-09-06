@@ -7,7 +7,7 @@
 \usepackage{amsfonts} % for nicer fonts
 \usepackage{amssymb} % for nicer symbols
 \usepackage[all]{nowidow} % to avoid widows and clubs, see also: http://www.tex.ac.uk/FAQ-widows.html
-\usepackage[style=authoryear, backend=biber, maxnames=3]{biblatex} % for the citation, change style if you want
+\usepackage[style=authoryear]{biblatex} % for the citation, change style if you want
 % examples can be found here:
 % https://www.sharelatex.com/learn/Biblatex_citation_styles
 % and
@@ -37,8 +37,8 @@
 \newcommand{\AsssignmentName}{Assignment}
 \newcommand{\Name}{Max Mustermann}
 \newcommand{\MatrikelNummer}{12345678}
-\newcommand{\Date}{01-12-2015}
-\newcommand{\Semester}{Fall Term 2016}
+\newcommand{\Date}{31-12-2019}
+\newcommand{\Semester}{Fall Term 2019}
 \newcommand{\Supervisor}{Prof. Dr. Marcel Tyrell}
 \newcommand{\Class}{Introduction to Finance}
 
@@ -88,7 +88,7 @@ BURN AFTER READING.
 I.e., everything that follows can be deleted up until the command 'printbibliography'.
 
 \subsection{Minimal Working Example Citation}
-A usual citation looks like this \parencite{R2016}. Whereas, a direct citation looks like this: \textcite{Hlavac2015} approves (hopefully). The bibliography is compiled automatically using the bib-file (in this case called 'bib\_file.bib'). To add additional sources add the bibtex code for the sources into the bib-file. More information about citation can be found in this \href{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#biblatex}{Wikibook (click me)}, just make sure that you use biblatex and not bibtex (there is a difference!).\\
+A usual citation looks like this \parencite{R2016}. Whereas, a direct citation looks like this: \textcite{Leifeld2013} approves (hopefully). The bibliography is compiled automatically using the bib-file (in this case called 'bib\_file.bib'). To add additional sources add the bibtex code for the sources into the bib-file. More information about citation can be found in this \href{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#biblatex}{Wikibook (click me)}, just make sure that you use biblatex and not bibtex (there is a difference!).
 
 The code for the bib\_file can be also obtained from scholar.google.com, i.e., search for 'Modigliani Miller 1958' (\href{https://scholar.google.de/scholar?hl=en&q=modigliani+miller+1958&btnG=&as_sdt=1%2C5&as_sdtp=}{result of the search (click me)}) and then click on 'cite' and then 'BibTeX' (in this case biblatex and bibtex behave the same), which results in this 
 \begin{verbatim}
@@ -104,16 +104,9 @@ The code for the bib\_file can be also obtained from scholar.google.com, i.e., s
 }
 \end{verbatim}
 
-that can be directly copied to the bib\_file (though you might want to change the key from 'modigliani1958cost' to 'Modigliani1958' or something like this, just make sure that you refer to the right key!).\\
+that can be directly copied to the bib\_file (though you might want to change the key from 'modigliani1958cost' to 'Modigliani1958' or something like this, just make sure that you refer to the right key!).
 
-To compile the document with the citations you need to compile it using 'PdfLaTeX - BibTex(biber) - (2x) PdfLaTeX' (or you can change that in the 'quick-build' option in the Options). Make sure that you have biber installed and working. If it's not working check these options out (using Texmaker):
-Go to 'Options' $\rightarrow$ 'Configure Texmaker' $\rightarrow$ 'Commands' $\rightarrow$ edit the field 'Bib(la)tex' to:
-\begin{itemize}
-\item MAC: biber \%.bcf \\
-If not working check this \href{http://tex.stackexchange.com/questions/153359/setting-up-texmaker-on-mac-to-work-with-biber}{SO-question (click me)}
-\item Win: "C:/Program Files (x86)/MiKTeX 2.9/miktex/bin/biber.exe" \%\\
-Or wherever your miktex is installed. If this is not working check this \href{http://tex.stackexchange.com/questions/63039/install-biber-in-miktex-on-a-64-bit-version-of-windows}{SO-question (click me)})
-\end{itemize}
+To compile the document with the citations you need to compile it using 'PdfLaTeX - BibTex - (2x) PdfLaTeX'.
 
 For the sake of completeness I also cite a book by \textcite{Wilkinson2006}, an article by two \textcite{Modigliani1958}, as well as another article by three \textcite{Johnson2000}. Last tip, if it shows up like this \textcite{UnknownKey2000}, that means the key for the citation is not found!
 
@@ -122,7 +115,7 @@ Pictures look like this (caption above, description below, centered image, relat
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{pictures/beach.jpg} \\
+\includegraphics[width=0.5\textwidth]{pictures/beach.jpg} 
 \caption{Image captions go below the image (usually)}
 \small Some more information if necessary.
 \end{figure}
@@ -150,20 +143,21 @@ There is the possibility of having inline-math which looks like this $\lambda = 
 For more information regarding math in \LaTeX, please refer to \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{this Wikibook (click me)}
 
 \subsection{Minimal Working Example Tables}
-Tables should be saved in a separate file to keep the source-file (i.e., the document that you compile) tidy.\\
+Tables should be saved in a separate file to keep the source-file (i.e., the document that you compile) tidy.
 
-A table looks like \autoref{tab:Table1} (keep in mind that \LaTeX \ decides for you where to put the table, you can specify parameters such as '[h!]' ('h' for here, 'b' for bottom of the page, 't' for top, and 'p' for appendix. An '!' adds weight to a single parameter; you can also chain commands such as '[htbp]'. Because of pushing-around, make sure that you use references as described in \autoref{subsec:references}). \\
+A table looks like \autoref{tab:Table1} (keep in mind that \LaTeX \ decides for you where to put the table, you can specify parameters such as '[h!]' ('h' for here, 'b' for bottom of the page, 't' for top, and 'p' for appendix. An '!' adds weight to a single parameter; you can also chain commands such as '[htbp]'. Because of pushing-around, make sure that you use references as described in \autoref{subsec:references}). 
 
 \begin{table}[h!]
 \centering
 \caption{Table captions go above the table (usually)}
 \label{tab:Table1}
-\input{tables/reg_table.tex}\\
+\input{tables/reg_table.tex}
+
 \bigskip
 \small Additional Information can be supplied here in the form of free text! If you want to have the same width as the table, include a row in the table itself!
 \end{table}
 
-Regression results should be exported automatically, i.e., using the r-packages stargazer, texreg, xtable or some other alternative. The code to produce the table shown, is in the appendix in \autoref{sec:appendix}. \\
+Regression results should be exported automatically, i.e., using the r-packages stargazer, texreg, xtable or some other alternative. The code to produce the table shown, is in the appendix in \autoref{sec:appendix}. 
 
 For more information regarding tables in \LaTeX, please refer to \href{https://en.wikibooks.org/wiki/LaTeX/Tables}{this Wikibook (click me)}. If you have a long table, use the longtable latex-package!
 \newpage
@@ -201,25 +195,28 @@ If possible, use the power of \LaTeX \ to automatically reference. I.e., to refe
 \section{Appendix: R-Code to create the tables}
 \label{sec:appendix}
 \begin{verbatim}
-library(stargazer)
-library(ggplot2) # for the data only
+library(ggplot2)
+library(texreg)
 
 # create a regression
-reg_result <- lm(data = diamonds, price ~ carat + depth + x + y + z)
+reg <- lm(price ~ carat + depth, data = diamonds)
 
-# save the result to a tex file using stargazer
-stargazer(reg_result, float = F, out = "reg_result.tex")
+# map new names and order for the variables
+var_map <- list(
+  "(Intercept)" = "The Intercept",
+  "depth" = "Depth",
+  "carat" = "Carat"
+)
 
-# make sure to either copy the file to tables/ or insert the path directly
-# a direct path could look like this
-# out = "C:/Documents/myWork/paper/tables/reg_result.tex"
+# print on screen
+texreg(reg, custom.coef.map = var_map, table = F)
+
+# print to file
+texreg(reg, custom.coef.map = var_map,
+       file = "tables/reg_result.tex", table = F)
 \end{verbatim}
 
 \newpage
 \input{frontmatter/erklaerung.tex}
 
 \end{document}
-
-
-
-
